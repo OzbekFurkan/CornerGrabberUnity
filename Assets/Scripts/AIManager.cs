@@ -23,12 +23,11 @@ public class AIManager : MonoBehaviour
     {
         // Get all black stones
         StoneManager[] stones = FindObjectsOfType<StoneManager>();
+        
         List<StoneManager> blackStones = new List<StoneManager>();
-        foreach (var stone in stones)
-        {
-            if (stone.team == Team.BLACK)
-                blackStones.Add(stone);
-        }
+
+        blackStones.Add(GameHandler.gameHandler.blackTeam.stone1);
+        blackStones.Add(GameHandler.gameHandler.blackTeam.stone2);
 
         // Directions for 8 neighbors
         int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
@@ -68,7 +67,7 @@ public class AIManager : MonoBehaviour
                 (int, int)[] corners = { (0,0), (0,4), (4,0), (4,4) };
                 for (int c = 0; c < 4; c++)
                 {
-                    if (!stone.visitedCorners[c])
+                    if (GameHandler.gameHandler.blackTeam.visitedCorners[c])
                     {
                         float dist = Mathf.Abs(nx - corners[c].Item1) + Mathf.Abs(ny - corners[c].Item2);
                         if (dist < minDist)
@@ -117,10 +116,11 @@ public class AIManager : MonoBehaviour
             SquareManager sm = targetSquare.GetComponent<SquareManager>();
             bestStone.isFocused = true;
             gh.MoveStone(sm);
-            bestStone.UpdateVisitedCorners();
+            GameHandler.gameHandler.SetCorner(bestStone, bestStone.indexX, bestStone.indexY);
         }
         else
         {
+            GameHandler.gameHandler.whoseTurn = WhoseTurn.WHITE;
             Debug.LogWarning("AI couldn't find a valid move!");
         }
     }

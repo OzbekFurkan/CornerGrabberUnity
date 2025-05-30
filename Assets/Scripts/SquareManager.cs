@@ -29,13 +29,13 @@ public class SquareManager : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                Debug.Log("clicked on " + indexX+ ", " + indexY);
+                Debug.Log("clicked on " + indexX + ", " + indexY);
 
                 OnStoneClicked?.Invoke(this);
             }
         }
     }
 
-    
+
 
 }

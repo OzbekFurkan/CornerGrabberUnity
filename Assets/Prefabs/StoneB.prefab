@@ -100,4 +100,6 @@ MonoBehaviour:
   indexX: 0
   indexY: 0
   team: 0
+  id: 0
   isFocused: 0
+  visitedCorners: 00000000
