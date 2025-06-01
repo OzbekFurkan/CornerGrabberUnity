@@ -326,9 +326,9 @@ public class GameHandler : MonoBehaviour
         TeamManager teamManager = (team == Team.WHITE) ? whiteTeam : blackTeam;
 
             if (teamManager.visitedCorners[0]) _visitedCorners[0] = true;
-            else if (teamManager.visitedCorners[1]) _visitedCorners[1] = true;
-            else if (teamManager.visitedCorners[2]) _visitedCorners[2] = true;
-            else if (teamManager.visitedCorners[3]) _visitedCorners[3] = true;
+            if (teamManager.visitedCorners[1]) _visitedCorners[1] = true;
+            if (teamManager.visitedCorners[2]) _visitedCorners[2] = true;
+            if (teamManager.visitedCorners[3]) _visitedCorners[3] = true;
 
         for(int i = 0; i < 4; i++)
         {

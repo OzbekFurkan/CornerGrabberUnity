@@ -561,8 +561,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1095006725}
   - component: {fileID: 1095006724}
-  - component: {fileID: 1095006726}
   - component: {fileID: 1095006727}
+  - component: {fileID: 1095006728}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -586,7 +586,6 @@ MonoBehaviour:
   stoneW: {fileID: 3614587838157283057, guid: a732d92ea05714643b73a002f5f922e7, type: 3}
   stoneB: {fileID: 8010373671697964191, guid: 4d0a67b06ed64479ca75477f43112ff1, type: 3}
   whoseTurn: 0
-  possibleMMoveSquares: []
 --- !u!4 &1095006725
 Transform:
   m_ObjectHideFlags: 0
@@ -602,18 +601,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1095006726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095006723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ef6948b0e124e4bbcc6ae4539b44d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1095006727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,6 +616,18 @@ MonoBehaviour:
   black_visited_corners: {fileID: 1450717082}
   white_visited_corners: {fileID: 342262586}
   winner_text: {fileID: 1566290500}
+--- !u!114 &1095006728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095006723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ef6948b0e124e4bbcc6ae4539b44d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1099809511
 GameObject:
   m_ObjectHideFlags: 0
