@@ -95,6 +95,7 @@ public class GameHandler : MonoBehaviour
     private (int, int) GenerateUniqueSpawnPoint()
     {
         bool isThereDuplicate = false;
+        bool isItCorner = false;
         int randX;
         int randY;
         do
@@ -102,8 +103,10 @@ public class GameHandler : MonoBehaviour
             randX = UnityEngine.Random.Range(0, 5);
             randY = UnityEngine.Random.Range(0, 5);
             isThereDuplicate = CheckForDuplicateStonePoint(randX, randY);
+            isItCorner = ((randX == 0 && randY == 0) || (randX == 0 && randY == 4) || (randX == 4 && randY == 0)
+                || (randX == 4 && randY == 4)) ? true : false;
         }
-        while (isThereDuplicate);
+        while (isThereDuplicate || isItCorner);
 
         return (randX, randY);
     }
