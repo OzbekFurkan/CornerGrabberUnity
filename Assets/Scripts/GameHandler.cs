@@ -195,6 +195,7 @@ public class GameHandler : MonoBehaviour
     private void ShowPossibleMove(SquareManager squareManager)
     {
         ResetAllSquares();
+        if(GetFocusedStone()) GetFocusedStone().isFocused = false;
 
         Color newColor = new Color(188, 188, 188);
 
@@ -324,18 +325,11 @@ public class GameHandler : MonoBehaviour
 
         int total = 0;
 
-        bool[] _visitedCorners = new bool[4];
-
         TeamManager teamManager = (team == Team.WHITE) ? whiteTeam : blackTeam;
-
-            if (teamManager.visitedCorners[0]) _visitedCorners[0] = true;
-            if (teamManager.visitedCorners[1]) _visitedCorners[1] = true;
-            if (teamManager.visitedCorners[2]) _visitedCorners[2] = true;
-            if (teamManager.visitedCorners[3]) _visitedCorners[3] = true;
 
         for(int i = 0; i < 4; i++)
         {
-            total += (_visitedCorners[i] ? 1 : 0);
+            total += (teamManager.visitedCorners[i] ? 1 : 0);
         }
 
         return total;
