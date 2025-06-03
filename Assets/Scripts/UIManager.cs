@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class UIManager : MonoBehaviour
     {
         white_visited_corners.text = GameHandler.gameHandler.TotalVisitedCornerAmount(Team.WHITE) + "";
         black_visited_corners.text = GameHandler.gameHandler.TotalVisitedCornerAmount(Team.BLACK) + "";
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
